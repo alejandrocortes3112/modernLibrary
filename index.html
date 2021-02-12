@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DIV Grid</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <link href="style.css" rel="stylesheet" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="sticky-header">
+      <h1 class="display-4 text-center">
+        <i class="fas fa-book-open text primary"></i>My Books
+      </h1>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-6 col-md-4">
+            <div class="icon-container">
+              <i class="fas fa-plus-circle fa-7x new-button" style="color: #256eff" data-toggle="modal" data-target="#exampleModal"></i>
+            </div>
+            <table class="table summary-table">
+              <tr>
+                <th scope="row"></th>
+                <td>Total</td>
+                <td data-id="total">0</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>Read</td>
+                <td data-id="read">0</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>No Read</td>
+                <td data-id="unread">0</td>
+              </tr>
+          </table>
+
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    New Book
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="book-form">
+                    <div class="form-group">
+                      <label for="title">Title</label>
+                      <input type="text" id="title" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="title">Author</label>
+                      <input
+                        type="text"
+                        id="author"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="title">Pages</label>
+                      <input type="number" id="pages" class="form-control" />
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="title">ISBN</label>
+                      <input type="text" id="isbn" class="form-control" required />
+                    </div>   
+                    <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input" id="read">
+                      <label class="form-check-label" for="read">Read?</label>
+                    </div>              
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="submit" class="btn btn-primary submit-button">
+                    Add Book
+                  </button>
+                </div>
+              </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-8"> 
+          <div class="results">
+          </div>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
